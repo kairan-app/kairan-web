@@ -9,7 +9,7 @@ gem "importmap-rails"
 gem "jbuilder"
 gem "puma", ">= 5.0"
 gem "sprockets-rails"
-gem "sqlite3", "~> 1.4"
+gem "pg"
 gem "stimulus-rails"
 gem "turbo-rails"
 gem "tzinfo-data", platforms: %i[ windows jruby ]
