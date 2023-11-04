@@ -5,6 +5,7 @@ ruby "3.2.2"
 gem "rails", "~> 7.1.1"
 
 gem "bootsnap", require: false
+gem "googleauth"
 gem "importmap-rails"
 gem "jbuilder"
 gem "puma", ">= 5.0"
