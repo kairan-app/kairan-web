@@ -10,9 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_11_03_143814) do
+ActiveRecord::Schema[7.1].define(version: 2023_11_06_124830) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "items", force: :cascade do |t|
+    t.string "url", limit: 8000, null: false
+    t.string "title", limit: 256
+    t.string "description", limit: 1024
+    t.string "image_url", limit: 8000
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["url"], name: "index_items_on_url", unique: true
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "name", limit: 15, null: false
