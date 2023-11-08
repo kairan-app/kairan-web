@@ -1,3 +1,14 @@
 <h2>
   Welcome#index
 </h2>
+<% if @marks.count > 0 %>
+<ul>
+  <% @marks.each do |mark| %>
+  <li>
+    <%= image_tag(mark.user.icon_url, width: 24) %>
+    <%= mark.user.name %>
+    <%= link_to(mark.item.url, mark.item.url, target: "_blank") %>
+  </li>
+  <% end %>
+</ul>
+<% end %>
