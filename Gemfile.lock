@@ -159,6 +159,9 @@ GEM
       racc (~> 1.4)
     nokogiri (1.15.4-x86_64-linux)
       racc (~> 1.4)
+    opengraph_parser (0.2.5)
+      addressable
+      nokogiri
     os (1.1.4)
     pg (1.5.4)
     psych (5.1.1.1)
@@ -266,6 +269,7 @@ DEPENDENCIES
   googleauth
   importmap-rails
   jbuilder
+  opengraph_parser
   pg
   puma (>= 5.0)
   rails (~> 7.1.1)

@@ -8,9 +8,10 @@ gem "bootsnap", require: false
 gem "googleauth"
 gem "importmap-rails"
 gem "jbuilder"
+gem "opengraph_parser"
+gem "pg"
 gem "puma", ">= 5.0"
 gem "sprockets-rails"
-gem "pg"
 gem "stimulus-rails"
 gem "turbo-rails"
 gem "tzinfo-data", platforms: %i[ windows jruby ]
