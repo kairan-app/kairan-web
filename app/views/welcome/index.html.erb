@@ -5,9 +5,11 @@
 <ul>
   <% @marks.each do |mark| %>
   <li>
-    <%= image_tag(mark.user.icon_url, width: 24) %>
-    <%= mark.user.name %>
-    <%= link_to(mark.item.url, mark.item.url, target: "_blank") %>
+    <p>
+      <%= image_tag(mark.user.icon_url, width: 24) %>
+      <%= mark.user.name %>
+    </p>
+    <%= render(partial: "items/card", locals: { item: mark.item }) %>
   </li>
   <% end %>
 </ul>
