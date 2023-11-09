@@ -1,0 +1,13 @@
+<div class="item-card <%= item.image_url.present? ? "with-image" : nil %>">
+  <h3>
+    <%= link_to(item.title.presence || item.url, item.url, target: "_blank") %>
+  </h3>
+  <div class="item-card-description">
+    <%= item.description %>
+  </div>
+  <% if item.image_url.present? %>
+  <div class="item-card-image">
+    <%= image_tag(item.image_url) %>
+  </div>
+  <% end %>
+</div>
