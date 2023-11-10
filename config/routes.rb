@@ -6,5 +6,7 @@ Rails.application.routes.draw do
 
   post "/marks", to: "marks#create", as: "marks"
 
+  get "/@:user_name", to: "users#show", as: "user"
+
   root "welcome#index"
 end

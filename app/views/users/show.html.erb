@@ -1,14 +1,10 @@
 <h2>
-  Welcome#index
+  <%= @user.name %>
 </h2>
 <% if @marks.count > 0 %>
 <ul>
   <% @marks.each do |mark| %>
   <li>
-    <p>
-      <%= image_tag(mark.user.icon_url, width: 24) %>
-      <%= link_to("@" + mark.user.name, mark.user) %>
-    </p>
     <%= render(partial: "items/card", locals: { item: mark.item }) %>
   </li>
   <% end %>
