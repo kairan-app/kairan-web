@@ -7,6 +7,13 @@ FROM registry.docker.com/library/ruby:$RUBY_VERSION-slim as base
 # Rails app lives here
 WORKDIR /rails
 
+# Set production environment
+ENV RAILS_ENV="production" \
+    BUNDLE_DEPLOYMENT="1" \
+    BUNDLE_PATH="/usr/local/bundle" \
+    BUNDLE_WITHOUT="development"
+
+
 # Throw-away build stage to reduce size of final image
 FROM base as build
 
@@ -44,7 +51,7 @@ COPY --from=build /rails /rails
 
 # Run and own only the runtime files as a non-root user for security
 RUN useradd rails --create-home --shell /bin/bash && \
-    chown -R rails:rails db log storage tmp /usr/local/bundle
+    chown -R rails:rails db log storage tmp
 USER rails:rails
 
 # Entrypoint prepares the database.
