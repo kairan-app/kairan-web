@@ -7,6 +7,12 @@ class Item < ApplicationRecord
   validates :description, length: { maximum: 1024 }
   validates :image_url, length: { maximum: 8000 }
 
+  after_create_commit :update_metadata_later
+
+  def update_metadata_later
+    ItemMetadataUpdaterJob.perform_later(id)
+  end
+
   def update_metadata
     og = OpenGraph.new(url)
     self.title = og.title
