@@ -2,7 +2,7 @@ source "https://rubygems.org"
 
 ruby "3.2.2"
 
-gem "rails", "~> 7.1.1"
+gem "rails", "= 7.1.1"
 
 gem "bootsnap", require: false
 gem "googleauth"
@@ -12,7 +12,7 @@ gem "opengraph_parser"
 gem "pg"
 gem "puma", ">= 5.0"
 gem "sass-rails"
-gem "sidekiq"
+gem "sidekiq", "= 6.5.12"
 gem "sprockets-rails"
 gem "stimulus-rails"
 gem "turbo-rails"
