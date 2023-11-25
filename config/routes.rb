@@ -13,5 +13,9 @@ Rails.application.routes.draw do
 
   get "/@:user_name", to: "users#show", as: "user", constraints: { user_name: /[a-z0-9\.]+/ }
 
+  namespace :api do
+
+  end
+
   root "welcome#index"
 end
