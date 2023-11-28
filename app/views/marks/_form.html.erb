@@ -1,6 +1,8 @@
 <% if logged_in? %>
-  <%= form_tag(marks_path) do %>
-    <%= text_field_tag(:url, nil, placeholder: "https://~~~") %>
-    <%= submit_tag "Submit" %>
+  <%= form_tag(marks_path, class: "block") do %>
+    <div class="field">
+      <%= text_field_tag(:url, nil, class: "input", placeholder: "https://~~~") %>
+    </div>
+    <%= submit_tag("Submit", class: "button is-info is-small") %>
   <% end %>
 <% end %>
