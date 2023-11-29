@@ -1,7 +1,11 @@
 <% if logged_in? %>
-  <%= image_tag current_user.icon_url, width: 24, height: 24 %>
-  <%= current_user.name %>
-  <%= link_to "Log out", session_path, data: { turbo_method: :delete } %>
+  <button class="button">
+    <figure class="image is-24x24">
+      <%= image_tag(current_user.icon_url, class: "is-rounded") %>
+    </figure>
+  </button>
+
+  <%= link_to "Log out", session_path, class: "button is-light", data: { turbo_method: :delete } %>
 <% else %>
 <script src="https://accounts.google.com/gsi/client" async defer></script>
 <div id="g_id_onload"
@@ -9,7 +13,7 @@
    data-login_uri="<%= Rails.application.credentials.google_auth_app.host %>/google_auth_callback"
    data-auto_prompt="false">
 </div>
-<div class="g_id_signin"
+<div class="g_id_signin button p-0"
    data-type="standard"
    data-size="large"
    data-theme="outline"
