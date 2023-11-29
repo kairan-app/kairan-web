@@ -1,0 +1,14 @@
+<article class="message">
+  <div class="message-header">
+    <p>
+      <%= image_tag(mark.user.icon_url, size: "24x24", class: "user-icon") %>
+      <%= link_to("@" + mark.user.name, mark.user) %>
+      <span>
+        shared:
+      </span>
+    </p>
+  </div>
+  <div class="message-body">
+    <%= render(partial: "items/card", locals: { item: mark.item }) %>
+  </div>
+</article>

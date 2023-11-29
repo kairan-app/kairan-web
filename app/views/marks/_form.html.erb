@@ -1,8 +1,14 @@
 <% if logged_in? %>
+  <div class="box">
   <%= form_tag(marks_path, class: "block") do %>
-    <div class="field">
-      <%= text_field_tag(:url, nil, class: "input", placeholder: "https://~~~") %>
+    <div class="field has-addons">
+      <div class="control is-expanded">
+        <%= text_field_tag(:url, nil, class: "input", placeholder: "https://~~~") %>
+      </div>
+      <div class="control">
+        <%= submit_tag("Submit", class: "button is-info") %>
+      </div>
     </div>
-    <%= submit_tag("Submit", class: "button is-info is-small") %>
   <% end %>
+  </div>
 <% end %>
