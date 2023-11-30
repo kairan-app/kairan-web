@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   post "/marks", to: "marks#create", as: "marks"
 
-  get "/@:user_name", to: "users#show", as: "user"
+  get "/@:user_name", to: "users#show", as: "user", constraints: { user_name: /[a-z0-9\.]+/ }
 
   root "welcome#index"
 end
