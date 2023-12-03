@@ -1,3 +1,41 @@
+.mark-card {
+  position: relative;
+  margin-bottom: 20px;
+  padding: 10px;
+  border-top: 1px solid #ddd;
+  border-radius: 4px;
+
+  h3 {
+    line-height: 1.4em;
+    margin: 0;
+    font-size: 1.2em;
+  }
+
+  .domain {
+    font-size: 0.9em;
+    color: #999;
+  }
+
+  .mark-card-image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 200px;
+    height: 118px;
+    background: #eee no-repeat center/cover;
+    border-radius: 4px;
+
+    img {
+      height: 100%;
+    }
+  }
+
+  &.with-image {
+    min-height: 120px;
+    padding-right: 220px;
+  }
+}
+
 .user-icon {
   border-radius: 100%;
 }

@@ -1,0 +1,39 @@
+<% item = mark.item %>
+
+<article class="mark-card <%= item.image_url ? 'with-image' : nil %>">
+  <h3>
+    <%= link_to(item.title.presence || item.url, item.url, target: "_blank") %>
+  </h3>
+  <p class="domain">
+    <%= item.domain %>
+  </p>
+  <p class="marked-by">
+    <%= image_tag(mark.user.icon_url, size: "16x16") %>
+    <%= link_to("@" + mark.user.name, mark.user) %>
+  </p>
+  <% if item.image_url %>
+  <div class="mark-card-image" style="background-image: url(<%= item.image_url %>)">
+  </div>
+  <% end %>
+</article>
+
+<!--
+<div class="box">
+  <article class="media">
+    <div class="media-content">
+      <div class="content">
+        <h3>
+          <%= link_to(item.title.presence || item.url, item.url, target: "_blank") %>
+        </h3>
+      </div>
+    </div>
+    <% if item.image_url %>
+      <div class="media-right">
+        <figure class="image is-128x128">
+          <%= image_tag(item.image_url) %>
+        </figure>
+      </div>
+    <% end %>
+  </article>
+</div>
+-->
