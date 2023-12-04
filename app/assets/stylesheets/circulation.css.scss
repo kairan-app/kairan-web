@@ -1,13 +1,38 @@
 .mark-card {
   position: relative;
-  margin-bottom: 20px;
-  padding: 10px;
-  border-top: 1px solid #ddd;
+  margin-bottom: 10px;
+  padding: 0 0 10px 46px;
+  border-bottom: 1px solid #ddd;
   border-radius: 4px;
+
+  .mark-user-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    img {
+      border-radius: 100%;
+    }
+  }
+
+  .mark-time {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  .mark-user-name, .mark-time {
+    margin: 0 0 6px !important;
+    line-height: 1.4em;
+
+    span {
+      color: #999;
+    }
+  }
 
   h3 {
     line-height: 1.4em;
-    margin: 0;
+    margin: 0 !important;
     font-size: 1.2em;
   }
 
@@ -18,10 +43,10 @@
 
   .mark-card-image {
     position: absolute;
-    top: 0;
+    top: 30px;
     right: 0;
-    width: 200px;
-    height: 118px;
+    width: 150px;
+    height: 80px;
     background: #eee no-repeat center/cover;
     border-radius: 4px;
 
@@ -31,8 +56,8 @@
   }
 
   &.with-image {
-    min-height: 120px;
-    padding-right: 220px;
+    min-height: 126px;
+    padding-right: 170px;
   }
 }
 
