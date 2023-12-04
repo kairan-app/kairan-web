@@ -9,6 +9,10 @@ class Item < ApplicationRecord
 
   after_create_commit :update_metadata_later
 
+  def domain
+    url.match(%r{^https?://([^/]+)})[1]
+  end
+
   def update_metadata_later
     ItemMetadataUpdaterJob.perform_later(id)
   end
