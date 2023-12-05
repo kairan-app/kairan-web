@@ -13,6 +13,8 @@ Rails.application.routes.draw do
 
   get "/@:user_name", to: "users#show", as: "user", constraints: { user_name: /[a-z0-9\.]+/ }
 
+  get "/settings/app_passwords", to: "settings/app_passwords#index", as: "app_passwords"
+
   namespace :api do
 
   end
