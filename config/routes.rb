@@ -14,6 +14,9 @@ Rails.application.routes.draw do
   get "/@:user_name", to: "users#show", as: "user", constraints: { user_name: /[a-z0-9\.]+/ }
 
   get "/settings/app_passwords", to: "settings/app_passwords#index", as: "app_passwords"
+  get "/settings/app_passwords/new", to: "settings/app_passwords#new", as: "new_app_password"
+  post "/settings/app_passwords", to: "settings/app_passwords#create"
+  delete "/settings/app_passwords/:id", to: "settings/app_passwords#destroy", as: "app_password"
 
   namespace :api do
 
