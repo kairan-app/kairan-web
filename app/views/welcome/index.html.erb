@@ -1,1 +1,5 @@
-<%= render(partial: "marks/message", collection: @marks, as: :mark) %>
+<div class="columns">
+  <div class="column is-6 is-offset-3">
+    <%= render(partial: "marks/card", collection: @marks, as: :mark) %>
+  </div>
+</div>
