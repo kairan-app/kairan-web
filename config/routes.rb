@@ -19,7 +19,9 @@ Rails.application.routes.draw do
   delete "/settings/app_passwords/:id", to: "settings/app_passwords#destroy", as: "app_password"
 
   namespace :api do
-
+    namespace :v1 do
+      get "/me", to: "me#show"
+    end
   end
 
   root "welcome#index"
