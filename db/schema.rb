@@ -10,9 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_11_07_124310) do
+ActiveRecord::Schema[7.1].define(version: 2023_12_01_121509) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "app_passwords", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "token", null: false
+    t.datetime "last_used_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["token"], name: "index_app_passwords_on_token", unique: true
+    t.index ["user_id"], name: "index_app_passwords_on_user_id"
+  end
 
   create_table "items", force: :cascade do |t|
     t.string "url", limit: 8000, null: false
@@ -42,6 +52,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_07_124310) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "app_passwords", "users"
   add_foreign_key "marks", "items"
   add_foreign_key "marks", "users"
 end
