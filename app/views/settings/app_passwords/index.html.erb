@@ -1,31 +1,30 @@
-<div class="columns">
-  <div class="column is-6 is-offset-3">
-    <h2>
-      App Passwords
-    </h2>
-    <%= form_for(AppPassword) do |form| %>
-      <%= submit_tag("Add", class: "button is-info") %>
-    <% end%>
-    <table class="table">
-      <thead>
+<div class="main">
+  <h2>
+    App Passwords
+  </h2>
+  <%= form_for(AppPassword) do |form| %>
+    <%= submit_tag("Add", class: "button is-info") %>
+  <% end%>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Token</th>
+        <th>Created At</th>
+        <th>Last Used At</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @app_passwords.each do |app_password| %>
         <tr>
-          <th>Token</th>
-          <th>Created At</th>
-          <th>Last Used At</th>
-          <th></th>
+          <td><%= app_password.token[0..12] + "..." %></td>
+          <td><%= app_password.created_at %></td>
+          <td><%= app_password.last_used_at %></td>
+          <td>
+            <%= link_to "Delete", app_password_path(app_password), data: { turbo_method: :delete, confirm: "Are you sure?" } %>
+          </td>
         </tr>
-      </thead>
-      <tbody>
-        <% @app_passwords.each do |app_password| %>
-          <tr>
-            <td><%= app_password.token[0..12] + "..." %></td>
-            <td><%= app_password.created_at %></td>
-            <td><%= app_password.last_used_at %></td>
-            <td>
-              <%= link_to "Delete", app_password_path(app_password), data: { turbo_method: :delete, confirm: "Are you sure?" } %>
-            </td>
-          </tr>
-        <% end %>
-      </tbody>
-  </div>
+      <% end %>
+    </tbody>
+  </table>
 </div>

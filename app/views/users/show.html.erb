@@ -1,12 +1,7 @@
-<div class="columns">
-  <div class="column is-6 is-offset-3">
-    <h2 class="title is-2">
-      <%= "@#{@user.name}" %>
-    </h2>
-  </div>
-</div>
-<div class="columns">
-  <div class="column is-6 is-offset-3">
-    <%= render(partial: "marks/card", collection: @marks, as: :mark) %>
-  </div>
+<div class="main">
+  <h2 class="title is-2">
+    <%= "@#{@user.name}" %>
+  </h2>
+
+  <%= render(partial: "marks/card", collection: @marks, as: :mark) %>
 </div>
