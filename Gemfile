@@ -12,6 +12,7 @@ gem "opengraph_parser"
 gem "pg"
 gem "puma", ">= 5.0"
 gem "sass-rails"
+gem "selenium-webdriver"
 gem "sidekiq", "= 6.5.12"
 gem "sprockets-rails"
 gem "stimulus-rails"
@@ -28,5 +29,4 @@ end
 
 group :test do
   gem "capybara"
-  gem "selenium-webdriver"
 end

@@ -7,13 +7,14 @@ services:
       - .:/app
       - bundle:/usr/local/bundle
     ports:
-      - "3000:3000"
+      - 3000:3000
     environment:
       REDIS_URL: redis://redis:6379
     depends_on:
       - database
       - redis
       - sidekiq
+      - chrome
   database:
     image: postgres
     environment:
@@ -37,6 +38,13 @@ services:
       - database
       - redis
     command: bundle exec sidekiq
+  chrome:
+    image: seleniarm/standalone-chromium
+    ports:
+      - 4444:4444
+      - 7900:7900
+    volumes:
+      - /dev/shm:/dev/shm
 volumes:
   redis:
   bundle:
