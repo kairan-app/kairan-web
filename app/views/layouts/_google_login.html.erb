@@ -1,24 +1,37 @@
 <% if logged_in? %>
-  <button class="button">
-    <figure class="image is-24x24">
-      <%= image_tag(current_user.icon_url, class: "is-rounded") %>
-    </figure>
-  </button>
-
-  <%= link_to "Log out", session_path, class: "button is-light", data: { turbo_method: :delete } %>
-<% else %>
-<script src="https://accounts.google.com/gsi/client" async defer></script>
-<div id="g_id_onload"
-   data-client_id="<%= Rails.application.credentials.google_auth_app.client_id %>"
-   data-login_uri="<%= Rails.application.credentials.google_auth_app.host %>/google_auth_callback"
-   data-auto_prompt="false">
-</div>
-<div class="g_id_signin button p-0"
-   data-type="standard"
-   data-size="large"
-   data-theme="outline"
-   data-text="sign_in_with"
-   data-shape="rectangular"
-   data-logo_alignment="left">
-</div>
+  <div class="navbar-item has-dropdown is-hoverable">
+    <span class="navbar-link">
+      Menu
+    </span>
+    <div class="navbar-dropdown is-boxed">
+      <%= link_to("App Passwords", app_passwords_path, class: "navbar-item") %>
+      <%= link_to("Log out", session_path, class: "navbar-item", data: { turbo_method: :delete }) %>
+    </div>
+  </div>
 <% end %>
+<div class="navbar-item">
+  <div class="buttons">
+    <% if logged_in? %>
+      <button class="button">
+        <figure class="image is-24x24">
+          <%= image_tag(current_user.icon_url, class: "is-rounded") %>
+        </div>
+      </button>
+    <% else %>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <div id="g_id_onload"
+       data-client_id="<%= Rails.application.credentials.google_auth_app.client_id %>"
+       data-login_uri="<%= Rails.application.credentials.google_auth_app.host %>/google_auth_callback"
+       data-auto_prompt="false">
+    </div>
+    <div class="g_id_signin button p-0"
+       data-type="standard"
+       data-size="large"
+       data-theme="outline"
+       data-text="sign_in_with"
+       data-shape="rectangular"
+       data-logo_alignment="left">
+    </div>
+    <% end %>
+  </div>
+</div>
