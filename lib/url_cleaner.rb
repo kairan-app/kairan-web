@@ -8,6 +8,7 @@ class UrlCleaner
     fbclid
     gclid
     yclid
+    _hsenc
   ].freeze
 
   def initialize(url)
