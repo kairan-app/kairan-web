@@ -8,6 +8,7 @@ gem "bootsnap", require: false
 gem "googleauth"
 gem "importmap-rails"
 gem "jbuilder"
+gem "kaminari"
 gem "opengraph_parser"
 gem "pg"
 gem "puma", ">= 5.0"

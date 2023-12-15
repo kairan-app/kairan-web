@@ -1,3 +1,4 @@
 <div class="main">
   <%= render(partial: "marks/card", collection: @marks, as: :mark) %>
+  <%= paginate @marks %>
 </div>

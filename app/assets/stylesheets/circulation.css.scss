@@ -2,6 +2,15 @@ nav.guest {
   margin-bottom: 40px;
 }
 
+nav.pagination {
+  margin-top: 40px;
+  justify-content: center;
+
+  span {
+    margin: 0 10px;
+  }
+}
+
 .notification {
   margin-right: 20px;
   margin-left: 20px;
