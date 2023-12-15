@@ -2,6 +2,6 @@
   <h2 class="title is-2">
     <%= "@#{@user.name}" %>
   </h2>
-
   <%= render(partial: "marks/card", collection: @marks, as: :mark) %>
+  <%= paginate @marks %>
 </div>
