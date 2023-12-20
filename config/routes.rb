@@ -18,6 +18,9 @@ Rails.application.routes.draw do
     get "/app_passwords/new", to: "app_passwords#new", as: "new_app_password"
     post "/app_passwords", to: "app_passwords#create"
     delete "/app_passwords/:id", to: "app_passwords#destroy", as: "app_password"
+
+    get "/profile", to: "profile#show", as: "profile"
+    put "/profile", to: "profile#update"
   end
 
   namespace :api do
