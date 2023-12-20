@@ -2,7 +2,7 @@
   <h2>
     App Passwords
   </h2>
-  <%= form_for(AppPassword) do |form| %>
+  <%= form_for(settings_app_passwords_path) do |form| %>
     <%= submit_tag("Add", class: "button is-info") %>
   <% end%>
   <table class="table">
@@ -21,7 +21,7 @@
           <td><%= app_password.created_at %></td>
           <td><%= app_password.last_used_at %></td>
           <td>
-            <%= link_to "Delete", app_password_path(app_password), data: { turbo_method: :delete, confirm: "Are you sure?" } %>
+            <%= link_to "Delete", settings_app_password_path(app_password), data: { turbo_method: :delete, confirm: "Are you sure?" } %>
           </td>
         </tr>
       <% end %>
