@@ -4,7 +4,8 @@
       Menu
     </span>
     <div class="navbar-dropdown is-boxed">
-      <%= link_to("App Passwords", app_passwords_path, class: "navbar-item") %>
+      <%= link_to("Profile", settings_profile_path, class: "navbar-item") %>
+      <%= link_to("App Passwords", settings_app_passwords_path, class: "navbar-item") %>
       <%= link_to("Log out", session_path, class: "navbar-item", data: { turbo_method: :delete }) %>
     </div>
   </div>
