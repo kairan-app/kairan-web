@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
     user.save
 
     log_in(user)
-    redirect_to root_path, notice: "Logged in"
+    redirect_to settings_profile_path, notice: "Logged in"
   end
 
   def destroy
